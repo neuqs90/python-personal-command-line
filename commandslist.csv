@@ -1,0 +1,5 @@
+Commands,Usage
+weather,Check Wather Data Of Default City Mentioned In Methd
+w,Cechk Wather Data Of Default City Mentioned In Methd
+weather <city_name>,Check Weather Data of Given City
+w <city_name>,Check Weather Data of Given City
