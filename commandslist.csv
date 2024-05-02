@@ -11,3 +11,4 @@ advice,print single advice got from api
 advices,print single advice got from api
 advice <joke_count>,print the number of advices from given count
 advices <joke_count>,print the number of advices from given count
+exit,to exit the terminal and close it
