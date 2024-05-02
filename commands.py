@@ -63,3 +63,29 @@ def get_jokes(count=1):
     except requests.exceptions.RequestException as e:
         print("\nOOPs Master : Network is not available , Please Check The Things.")
 
+def get_advice(count = 1):
+
+    if not str(count).isdigit():
+
+        print("\nMaster , The Advice Count Number Must Be Integer Number")
+        return
+    
+    if int(count) < 1:
+
+        print("\nMaster , Advice Count Must Be Greater Than 0")
+        return
+    
+    print("\nMaster : Here Is Your Advices -\n")
+
+    for i in range(1,int(count)+1):
+
+        try:
+            data = requests.get("https://api.adviceslip.com/advice")
+
+            data = data.json()
+
+            print(f"Advice {i} : {data["slip"]["advice"]}")
+
+        except requests.exceptions.RequestException as e:
+                print("\nOOPs Master : Network is not available , Please Check The Things.")
+
