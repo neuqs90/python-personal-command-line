@@ -25,6 +25,15 @@ while True:
             else:
 
                 print("OOPS Master ! Please Enter Joke Count Number Afte 'joke' or 'jokes' in command")
+
+        elif command_lst[0] in ["advice","advices"]:
+
+            if command_lst[1].isdigit():
+
+                commands.get_advice(command_lst[1])
+            else:
+
+                print("OOPS Master ! Please Enter Advice Count Number Afte 'advice' or 'advices' in command")
         else:
 
             print("OOPS Master ! Invalid Command , PLease Check And Re-enter Command.")
@@ -38,6 +47,10 @@ while True:
         elif command_lst[0] in ["joke","jokes"]:
 
             commands.get_jokes()
+
+        elif command_lst[0] in ["advice","advices"]:
+
+            commands.get_advice()
         
         else:
 
