@@ -1,4 +1,5 @@
 import commands
+from time import sleep
 
 print("\n\n\t\t\t\t---------------------------------------------------------")
 print("\t\t\t\t|              Personal Terminal : NEUQS90              |")
@@ -51,6 +52,13 @@ while True:
         elif command_lst[0] in ["advice","advices"]:
 
             commands.get_advice()
+
+        elif command_lst[0] in ["exit"]:
+
+            print("\nGood Bye Master, Come Back Soon")
+            print("Exiting Terminal ......")
+            sleep(2)
+            break
         
         else:
 
