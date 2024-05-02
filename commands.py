@@ -29,3 +29,37 @@ def get_weather_data(city="rajkot"):
 
     except requests.exceptions.RequestException as e:
         print("\nOOPs Master : Network is not available OR City Name Is Invalid , Please Check The Things.")
+
+def get_jokes(count=1):
+
+    api_url = 'https://api.api-ninjas.com/v1/jokes?limit={}'.format(count)
+
+    if not str(count).isdigit():
+
+        print("\nMaster , The Jokes Count Number Must Be Integer Number")
+        return
+    
+    if int(count) < 1:
+
+        print("\nMaster , Jokes Count Must Be Greater Than 0")
+        return
+    
+    try:
+        response = requests.get(api_url, headers={'X-Api-Key': 'eLlayU1UTHHkGaJFcJuckw==x48IQgvhIbv3c5ON'})
+        if response.status_code == 200:
+            data = response.json()
+            
+            if int(count) > 1:
+
+                print("\nMaster : Here Is Jokes For You -\n")
+                for index,i in enumerate(data,1):
+                    print(f"Joke {index} : {i["joke"]}")
+
+            else:
+
+                print("\nMaster , Joke For You -")
+                print("\n",data[0]["joke"])
+        
+    except requests.exceptions.RequestException as e:
+        print("\nOOPs Master : Network is not available , Please Check The Things.")
+
