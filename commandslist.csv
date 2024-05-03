@@ -12,3 +12,5 @@ advices,print single advice got from api
 advice <joke_count>,print the number of advices from given count
 advices <joke_count>,print the number of advices from given count
 exit,to exit the terminal and close it
+add birthday <person_name> <person_birthdate(dd-mm),Add persons brithday data to data list
+add bd <person_name> <person_birthdate(dd-mm),Add persons brithday data to data list
