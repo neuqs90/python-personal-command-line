@@ -14,3 +14,23 @@ advices <joke_count>,print the number of advices from given count
 exit,to exit the terminal and close it
 add birthday <person_name> <person_birthdate(dd-mm),Add persons brithday data to data list
 add bd <person_name> <person_birthdate(dd-mm),Add persons brithday data to data list
+show bd,list all birthdays in data list
+show birthdays,list all birthdays in data list
+show birthday,list all birthdays in data list
+check bd,list all birthdays in data list
+check birthdays,list all birthdays in data list
+check birthday,list all birthdays in data list
+list bd,list all birthdays in data list
+list birthdays,list all birthdays in data list
+list birthday,list all birthdays in data list
+cls,clear terminal (remove above commands)
+clear,clear terminal (remove above commands)
+show bd <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+show birthdays <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+show birthday <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+check bd <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+check birthdays <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+check birthday <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+list bd <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+list birthdays <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
+list birthday <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
