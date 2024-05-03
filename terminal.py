@@ -12,7 +12,18 @@ while True:
     command_lst = user_input.split(" ")
 
     
-    if len(command_lst) == 2:
+    if len(command_lst) == 4:
+
+        if command_lst[0] in ["add"] and command_lst[1] in ["birthday","bd"]:
+
+            if "-" not in command_lst[3]:
+                print("\nMaster Looks Like You Have Inputed Wrong Date Format\nCorrect Format Is : (dd-mm)")
+
+            else:
+
+                commands.add_birthday(name=command_lst[2],date=command_lst[3])
+
+    elif len(command_lst) == 2:
 
         if command_lst[0] in ["weather","w"]:
 
