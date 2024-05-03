@@ -107,7 +107,7 @@ def add_birthday(name: str,date: str):
        
         if birthdate_data[0].lower() == name.lower():
                 
-            print("Master Looks Like The Person With the Same name Exists , Here Is Persons Data")
+            print("\nMaster Looks Like The Person With the Same name Exists , Here Is Persons Data")
             print(f"Name : {birthdate_data[0]} , Birthdate : {birthdate_data[1]}")
 
             add_confirm = input("\nDo You Still Wann Add Birthdate Data ? (y/n) : ")
@@ -126,4 +126,116 @@ def add_birthday(name: str,date: str):
         bd_data.write(f"{name},{date}\n")
         print("\nBirthdate Data Added Successfully .")
 
+def show_birthday(d="00",m="00"):
+
+    if not (d.isdigit() and m.isdigit()):
+
+        print("\nMaster Please Enter Date And Month In Proper Format\nExample : check bd dd mm")
+
+    file = open("birthdays.csv","r")
+
+    bd_Data = file.readlines()
+
+    if len(bd_Data) == 0:
+
+        print("\nMaster Looks Like The Birthdays List Is Empty")
+        return
+
+    found = False
+
+
+    if d == "00" and m == "00":
+        count = 0
+        print("\nMaster Here Is All Birthdays In Data list : \n")
+        for birthday_data in bd_Data:
+
+            if "," not in birthday_data:
+                continue
             
+            found = True
+            count += 1
+            birthday_data = birthday_data.split(",")
+            print(f"{count} ) Name : {birthday_data[0]} , Birthdate : {birthday_data[1]}",end="")
+    
+        if not found:
+
+            print("\nMaster Looks Like The Birthdays List Is Empty") 
+            return
+
+    elif m == "00":
+    
+        count = 0
+        print(f"\nMaster Here Is Birthdays In Data list With Date {d}: \n")
+
+        for birthday_data in bd_Data:
+
+            if "," not in birthday_data:
+                continue
+
+            birthday_data = birthday_data.split(",")
+
+            full_date = birthday_data[1].split("-")
+            
+            if full_date[0] == d:
+
+                found = True
+                count += 1
+                print(f"{count} ) Name : {birthday_data[0]} , Birthdate : {birthday_data[1]}",end="")    
+
+        if not found:
+
+            print(f"\nMaster Looks Like There Is No Person Whose Birthday Is On Date {d}") 
+            return
+        
+    elif d == "00":
+    
+        count = 0
+        print(f"\nMaster Here Is Birthdays In Data list With Month {m}: \n")
+
+        for birthday_data in bd_Data:
+
+            if "," not in birthday_data:
+                continue
+            
+            birthday_data = birthday_data.split(",")
+
+            full_date = birthday_data[1].split("-")
+           
+            if full_date[1] == m+"\n":
+
+                found = True
+                count += 1
+                print(f"{count} ) Name : {birthday_data[0]} , Birthdate : {birthday_data[1]}",end="")    
+
+        if not found:
+
+            print(f"\nMaster Looks Like There Is No Person Whose Birthday Is On Month {m}") 
+            return
+    else:
+
+        count = 0
+        print(f"\nMaster Here Is Birthdays In Data list Whose Birthday Is {d}-{m}: \n")
+
+        for birthday_data in bd_Data:
+
+            if "," not in birthday_data:
+                continue
+            
+            birthday_data = birthday_data.split(",")
+
+            full_date = birthday_data[1].split("-")
+           
+            
+            if full_date[1] == m+"\n":
+                
+                if full_date[0] == d:
+
+                    found = True
+                    count += 1
+                    print(f"{count} ) Name : {birthday_data[0]} , Birthdate : {birthday_data[1]}",end="")    
+
+        if not found:
+
+            print(f"\nMaster Looks Like There Is No Person Whose Birthday Is {d}-{m}") 
+            return
+        
