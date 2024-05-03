@@ -89,3 +89,41 @@ def get_advice(count = 1):
         except requests.exceptions.RequestException as e:
                 print("\nOOPs Master : Network is not available , Please Check The Things.")
 
+def add_birthday(name: str,date: str):
+
+    if "-" not in date:
+
+        print("Master The Given Birthdate Format Is Invalid Please Input The Birthdate In Format ( dd-mm ) .")
+
+    found = False
+
+    bd_data = open("birthdays.csv","r+")
+
+    bd_data_lst = bd_data.readlines()
+   
+    for birthdate in bd_data_lst:
+
+        birthdate_data  = birthdate.split(",")
+       
+        if birthdate_data[0].lower() == name.lower():
+                
+            print("Master Looks Like The Person With the Same name Exists , Here Is Persons Data")
+            print(f"Name : {birthdate_data[0]} , Birthdate : {birthdate_data[1]}")
+
+            add_confirm = input("\nDo You Still Wann Add Birthdate Data ? (y/n) : ")
+
+            if add_confirm.lower() != "y":
+                print("\nAdding Birthdate Data Canceled.")
+                return
+
+            else:
+                bd_data.write(f"{name},{date}\n")
+                print("\nBirthdate Data Added Successfully.")
+                added = True
+                return
+
+    if not found:
+        bd_data.write(f"{name},{date}\n")
+        print("\nBirthdate Data Added Successfully .")
+
+            
