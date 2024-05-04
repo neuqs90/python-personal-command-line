@@ -1,4 +1,6 @@
 import requests
+import os
+from shutil import rmtree
 
 def get_weather_data(city="rajkot"):
 
@@ -294,9 +296,22 @@ def delete_birthdate():
 
     print("\nSuccessfully Deleted The Given Indexed Birthdays Data.")
     
+def create_file(file_name):
 
+    with open(file_name,"a") as file:
+        pass
 
-    
+    print("\nFile Created Successfully.")
 
+def remove_file(file_name):
 
+    os.remove(file_name)
+
+    print("\nFile Deleted Successfully.")
+
+def remove_dir(dir_name):
+
+    rmtree(dir_name)
+
+    print("\nDirectory Deleted Successfully.")
 
