@@ -238,4 +238,65 @@ def show_birthday(d="00",m="00"):
 
             print(f"\nMaster Looks Like There Is No Person Whose Birthday Is {d}-{m}") 
             return
-        
+
+def delete_birthdate():
+
+    file = open("birthdays.csv","r")
+
+    data = file.readlines()
+
+    if not len(data) > 0:
+
+        print("\nMaster Looks Like There Is No Birthdays Data In Data List Currently.")
+        return
+    
+    count = 0
+    found = False
+
+    print("")
+
+    for bd in data:
+
+        if ("," not in bd) or (bd.isspace()):
+
+            continue
+
+        found = True
+        count += 1
+
+        bd_data_lst = bd.split(",")
+        print(f"{count} ) {bd_data_lst[0]} : {bd_data_lst[1]}",end="")
+
+    if not found:
+        print("\nMaster Looks like There Is No Data Available In Birthday Data List.")
+        return
+
+    index_to_remove = input("\nEnter The Birthday Data Number From Left Side Of Whom You Wanna Delete ( enter 'n' to cancel process ) : ")
+
+    if index_to_remove.lower() == "n":
+        print("\nDeleting Birthday Data Canceled.")
+        return
+
+    elif not index_to_remove.isdigit():
+        print("\nMaster Please Enter Index Number , Try Running Command Again.")
+        return
+    
+    if int(index_to_remove) > len(data) or int(index_to_remove) <= 0:
+
+        print("\nMaster , The Index Number Must Be From Above Listed Data , Find Index Number On Left Most Side Of Each Row.")
+        return
+    
+    data.pop(int(index_to_remove)-1)
+
+    file = open("birthdays.csv","w")
+  
+    file.writelines(data)
+
+    print("\nSuccessfully Deleted The Given Indexed Birthdays Data.")
+    
+
+
+    
+
+
+
