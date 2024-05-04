@@ -38,6 +38,23 @@ while True:
 
             commands.get_weather_data(command_lst[1])
 
+        elif command_lst[0] in ["mkdir"]:
+
+            print()
+            system(user_input)
+
+        elif command_lst[0] in ["rmdir"]:
+
+            commands.remove_dir(command_lst[1])
+
+        elif command_lst[0] in ["mkfile"]:
+
+            commands.create_file(command_lst[1])
+
+        elif command_lst[0] in ["rmfile"]:
+
+            commands.remove_file(command_lst[1])
+
         elif command_lst[0] in ["check","list","show"] and command_lst[1] in ["birthdays","birthday","bd"]:
 
             commands.show_birthday()
