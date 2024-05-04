@@ -41,6 +41,10 @@ while True:
         elif command_lst[0] in ["check","list","show"] and command_lst[1] in ["birthdays","birthday","bd"]:
 
             commands.show_birthday()
+        
+        elif command_lst[0] in ["delete"] and command_lst[1] in ["birthday","bd"]:
+
+            commands.delete_birthdate()
 
         elif command_lst[0] in ["joke","jokes"]:
 
