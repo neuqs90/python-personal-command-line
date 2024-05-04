@@ -36,3 +36,7 @@ list birthdays <date(dd)> <month(mm>),list all birthdays in data list. with spec
 list birthday <date(dd)> <month(mm>),list all birthdays in data list. with specified month and date and if you want to find for only month or date the put others value to '0' 
 delete birthday,delete the birthday data from data list
 delete bd,delete the birthday data from data list
+rmdir <folder_name>,remove the folder which was given in 2nd arguement
+mkdir <folder_name>,create the folder at given location in 2nd arguement
+rmfile <file_name>,remove file whose location given at 2nd arguement
+mkfile <file_name>,create file with the given location as 2nd arguement
