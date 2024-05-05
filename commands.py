@@ -1,6 +1,7 @@
 import requests
 import os
 from shutil import rmtree
+import encode_decode as ed
 
 def get_weather_data(city="rajkot"):
 
@@ -315,3 +316,44 @@ def remove_dir(dir_name):
 
     print("\nDirectory Deleted Successfully.")
 
+def add_task(task_desc):
+
+    file = open("tasks.txt","a")
+
+    encoded_Task = ed.encode(task_desc)
+
+    file.write(encoded_Task + "\n")
+
+    file.close()
+
+    print("\nTask Added Successfully")
+
+def show_tasks():
+
+    file = open("tasks.txt","r")
+
+    all_tasks = file.readlines()
+
+    if len(all_tasks) == 0:
+
+        print("\nMaster Looks Like There Is No Task Available , To Do List Is Empty.")
+        return
+    
+    found = False
+    counter = 0
+    
+    print("\nMaster Here Is All Available Tasks : \n")
+
+    for task in all_tasks:
+
+        if task.isspace():
+            continue
+
+        counter += 1
+        found = True
+        task = task.removesuffix("\n")
+        print(f"[{counter}] {ed.decode(task)}",end="\n")
+    
+    if not found:
+
+        print("\nMaster Looks Like There Is No Tasks Available In Todo List File.")
