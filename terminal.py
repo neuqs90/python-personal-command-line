@@ -12,7 +12,12 @@ while True:
 
     command_lst = user_input.split(" ")
 
-    
+    if user_input[:8].lower() == "add task":
+
+        task_desc = user_input[9:]
+
+        commands.add_task(task_desc.title())
+
     if len(command_lst) == 4:
 
         if command_lst[0] in ["add"] and command_lst[1] in ["birthday","bd"]:
@@ -37,6 +42,14 @@ while True:
         if command_lst[0] in ["weather","w"]:
 
             commands.get_weather_data(command_lst[1])
+
+        elif command_lst[0] in ["show"] and command_lst[1] in ["tasks","task"]:
+
+            commands.show_tasks()
+
+        elif command_lst[0] in ["delete"] and command_lst[1] in ["tasks","task"]:
+
+            commands.delete_task()
 
         elif command_lst[0] in ["mkdir"]:
 
