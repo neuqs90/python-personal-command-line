@@ -40,3 +40,8 @@ rmdir <folder_name>,remove the folder which was given in 2nd arguement
 mkdir <folder_name>,create the folder at given location in 2nd arguement
 rmfile <file_name>,remove file whose location given at 2nd arguement
 mkfile <file_name>,create file with the given location as 2nd arguement
+delete task,to delete task from todo list
+delete tasks,to delete task from todo list
+show task,to show all available tasks
+show tasks,to show all available tasks
+add task <task_description>,add the task into todolist
