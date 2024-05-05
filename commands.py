@@ -341,7 +341,7 @@ def show_tasks():
     
     found = False
     counter = 0
-    
+
     print("\nMaster Here Is All Available Tasks : \n")
 
     for task in all_tasks:
@@ -357,3 +357,57 @@ def show_tasks():
     if not found:
 
         print("\nMaster Looks Like There Is No Tasks Available In Todo List File.")
+
+def delete_task():
+
+    file = open("tasks.txt","r")
+
+    data = file.readlines()
+
+    if not len(data) > 0:
+
+        print("\nMaster Looks Like There Is No Tasks Available In List Currently.")
+        return
+    
+    count = 0
+    found = False
+
+    print("\nAvailable Tasks : \n")
+
+    for tsk in data:
+
+        if tsk.isspace():
+            continue
+
+        found = True
+        count += 1
+
+        tsk = tsk.removesuffix("\n")
+        print(f"[{count}] {ed.decode(tsk)}",end="\n")
+
+    if not found:
+        print("\nMaster Looks like There Is No Tasks Available In List.")
+        return
+
+    index_to_remove = input("\nEnter The Task Number From Left Side Of Whom You Wanna Delete ( enter 'n' to cancel process ) : ")
+
+    if index_to_remove.lower() == "n":
+        print("\nDeleting Task Data Canceled.")
+        return
+
+    elif not index_to_remove.isdigit():
+        print("\nMaster Please Enter Index Number , Try Running Command Again.")
+        return
+    
+    if int(index_to_remove) > len(data) or int(index_to_remove) <= 0:
+
+        print("\nMaster , The Index Number Must Be From Above Listed Data , Find Index Number On Left Most Side Of Each Row.")
+        return
+    
+    data.pop(int(index_to_remove)-1)
+
+    file = open("tasks.txt","w")
+  
+    file.writelines(data)
+
+    print("\nSuccessfully Deleted The Task With Given Index.")
