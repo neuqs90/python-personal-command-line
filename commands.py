@@ -416,6 +416,17 @@ def delete_task():
 
     print("\nSuccessfully Deleted The Task With Given Index.")
 
+def clear_tasks():
+
+
+    file = open("tasks.txt","w")
+
+    file.write("")
+
+    file.close()
+
+    print("\nAll Tasks Cleared Successfully.")
+
 def start_timer(time,minute=False):
 
     if not str(time).isdigit():
