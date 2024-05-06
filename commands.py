@@ -4,6 +4,7 @@ from shutil import rmtree
 import encode_decode as ed
 from time import sleep
 from playsound import playsound
+from plyer import battery
 
 def get_weather_data(city="rajkot"):
 
@@ -434,3 +435,18 @@ def start_timer(time,minute=False):
 
     print("\nTimer Completed .....")
     playsound("timer.mp3")
+
+def get_battery_stat():
+
+    battery_stat = battery.get_state()
+
+    print("\nMaster Here Is Your Battery Status :\n")
+
+    if battery_stat["isCharging"]:
+
+        print(f"\nCharger Is Pluged , {battery_stat["percentage"]} %")
+
+    else:
+
+        print(f"Charger Is Not Pluged , {battery_stat["percentage"]} %")
+    
