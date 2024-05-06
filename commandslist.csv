@@ -50,3 +50,5 @@ start timer <time> sec,start time according to given seconds and after complete 
 battery status,print the battery status such as is currently charger is pluged or not and battery percentage
 random <item1>,<item2>,....<itemn>,print a random element from given items
 random <num1> to <num2>,print a random number between range of num1 to num2
+clear task,to clear all available tasks
+clear tasks,to clear all available tasks
