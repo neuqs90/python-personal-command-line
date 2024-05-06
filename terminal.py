@@ -29,6 +29,16 @@ while True:
 
                 commands.add_birthday(name=command_lst[2],date=command_lst[3])
     
+        elif command_lst[0] in ["start"] and command_lst[1] in ["timer"] and command_lst[3] in ["sec","min"]:
+
+            if command_lst[3] == "min":
+
+                commands.start_timer(command_lst[2],True)
+
+            else:
+
+                commands.start_timer(command_lst[2])
+                
         elif command_lst[0] in ["check","list","show"] and command_lst[1] in ["birthdays","birthday","bd"]:
 
             commands.show_birthday(d=command_lst[2],m=command_lst[3])
