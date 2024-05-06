@@ -64,6 +64,18 @@ while True:
 
             commands.get_weather_data(command_lst[1])
 
+        elif command_lst[0] in ["clear"] and command_lst[1] in ["task","tasks"]:
+
+            confirm = input("\nAre You Sure You Wanna Clear All Tasks ? (y/n) : ")
+
+            if confirm.lower() == "y":
+
+                commands.clear_tasks()
+
+            else:
+
+                print("\nTask Clearing Canceled.")
+
         elif command_lst[0] in ["show"] and command_lst[1] in ["tasks","task"]:
 
             commands.show_tasks()
