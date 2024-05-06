@@ -85,6 +85,10 @@ while True:
         elif command_lst[0] in ["delete"] and command_lst[1] in ["birthday","bd"]:
 
             commands.delete_birthdate()
+        
+        elif command_lst[0] in ["battery"] and command_lst[1] in ["status"]:
+
+            commands.get_battery_stat()
 
         elif command_lst[0] in ["joke","jokes"]:
 
