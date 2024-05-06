@@ -5,6 +5,7 @@ import encode_decode as ed
 from time import sleep
 from playsound import playsound
 from plyer import battery
+from random import randint,choice
 
 def get_weather_data(city="rajkot"):
 
@@ -450,3 +451,12 @@ def get_battery_stat():
 
         print(f"Charger Is Not Pluged , {battery_stat["percentage"]} %")
     
+def random_num(num1,num2):
+
+    print("\nHere Is Random Number : " , randint(num1,num2))
+
+def random_from_lst(lst):
+
+    lst = lst.split(",")
+
+    print("\nHere Is A Random Element : " , choice(lst))
