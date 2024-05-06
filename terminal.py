@@ -18,6 +18,14 @@ while True:
 
         commands.add_task(task_desc.title())
 
+    if user_input[:6].lower() == "random":
+
+        list = user_input[7:]
+
+        if "," in list:
+
+            commands.random_from_lst(list)
+
     if len(command_lst) == 4:
 
         if command_lst[0] in ["add"] and command_lst[1] in ["birthday","bd"]:
@@ -28,6 +36,12 @@ while True:
             else:
 
                 commands.add_birthday(name=command_lst[2],date=command_lst[3])
+
+        elif command_lst[0] in ["random"] and command_lst[2] in ["to"]:
+
+            if command_lst[1].isdigit() and command_lst[3].isdigit():
+
+                commands.random_num(int(command_lst[1]),int(command_lst[3]))
     
         elif command_lst[0] in ["start"] and command_lst[1] in ["timer"] and command_lst[3] in ["sec","min"]:
 
@@ -43,10 +57,7 @@ while True:
 
             commands.show_birthday(d=command_lst[2],m=command_lst[3])
 
-        else:
-            print("\nOOPS Master ! Invalid Command , PLease Check And Re-enter Command.")
-
-
+    
     elif len(command_lst) == 2:
 
         if command_lst[0] in ["weather","w"]:
@@ -107,10 +118,7 @@ while True:
             else:
 
                 print("\nOOPS Master ! Please Enter Advice Count Number Afte 'advice' or 'advices' in command")
-        else:
-
-            print("\nOOPS Master ! Invalid Command , PLease Check And Re-enter Command.")
-
+      
     elif len(command_lst) == 1:
 
         if command_lst[0] in ["weather","w"]:
@@ -134,9 +142,4 @@ while True:
             print("\nGood Bye Master, Come Back Soon")
             print("\nExiting Terminal ......")
             sleep(2)
-            break
-        
-        else:
-
-            print("\nOOPS Master ! Invalid Command , PLease Check And Re-enter Command.")
-            
+            break      
