@@ -45,3 +45,5 @@ delete tasks,to delete task from todo list
 show task,to show all available tasks
 show tasks,to show all available tasks
 add task <task_description>,add the task into todolist
+start timer <time> min,start time according to given minute and after complete played timer complete sound
+start timer <time> sec,start time according to given seconds and after complete played timer complete sound
