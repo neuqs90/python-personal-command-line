@@ -2,6 +2,8 @@ import requests
 import os
 from shutil import rmtree
 import encode_decode as ed
+from time import sleep
+from playsound import playsound
 
 def get_weather_data(city="rajkot"):
 
@@ -411,3 +413,24 @@ def delete_task():
     file.writelines(data)
 
     print("\nSuccessfully Deleted The Task With Given Index.")
+
+def start_timer(time,minute=False):
+
+    if not str(time).isdigit():
+        print("\nMaster , Please Enter Timer Time Out In Numbers , ( secods or minute )")
+        return
+    
+    time = int(time)
+    if minute:
+
+        time *= 60
+
+    print("\nStarting Timer.....\n")
+
+
+    for i in range(time,-1,-1):
+        print(f"{i} Remaining")
+        sleep(1)
+
+    print("\nTimer Completed .....")
+    playsound("timer.mp3")
